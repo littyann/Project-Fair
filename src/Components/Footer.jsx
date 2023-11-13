@@ -16,8 +16,8 @@ function Footer() {
           <div className="links d-flex flex-column ">
             <h4>Links</h4>
             <Link to={'/'} style={{ textDecoration:'none', color:'white' }}>Home</Link>
-            <Link to={'/cart'} style={{ textDecoration:'none', color:'white' }}>Cart</Link>
-            <Link to={'/whishlist'} style={{ textDecoration:'none', color:'white' }}>Wishlist</Link>
+            <Link to={'/login'} style={{ textDecoration:'none', color:'white' }}>Login</Link>
+            <Link to={'/register'} style={{ textDecoration:'none', color:'white' }}>Register</Link>
           </div>
           <div className="guides d-flex flex-column ">
           <h4 className='mb-3'>Guides</h4>
