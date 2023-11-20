@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import titleImage from '../Assests/p3-removebg-preview.png'
 import ProjectCard from '../Components/ProjectCard'
 import { Link } from 'react-router-dom'
 
 function Home() {
+const [loggedin,setLoggedin] = useState(false)
+  useEffect(()=>{
+    if(sessionStorage.getItem("token")){
+      setLoggedin(true)
+    }else{
+      setLoggedin(false)
+    }
+
+  },[])
   return (
     <>
     {/* Landing Section */}
@@ -16,8 +25,11 @@ function Home() {
           <h1 style={{fontSize:"80px"}} class='fw-bolder text-light mb-5'><i className='fa-brands fa-stack-overflow fa-bounce'></i> Project Fair </h1>
           <p>One Stop Destination for all Software Development Projects. Where User can add and manage their projects. As well as access all projects available in our website... What are you waiting for!!!</p>
 
-          
-          <Link to={'/login'} className="btn btn-primary">Start to Explore <i className="fa-solid fa-right-long fa-beat ms-2"></i></Link>
+         { 
+         loggedin?
+         <Link to={'/dashboard'} className="btn btn-primary">Manage your Projects <i className="fa-solid fa-right-long fa-beat ms-2"></i></Link>:
+
+          <Link to={'/login'} className="btn btn-primary">Start to Explore <i className="fa-solid fa-right-long fa-beat ms-2"></i></Link>}
 
         
         </Col>
